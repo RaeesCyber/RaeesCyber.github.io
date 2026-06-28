@@ -7,7 +7,7 @@ tags:  [Encryption, Data Security, Cybersecurity Best Practices, Information Sec
 
 # The Role of Encryption in Securing Data
 
-<img src="../../../raeeskhan/Downloads/Video/what-is-encryption.svg" alt="Encryption Visual" width="1000" height="800"/>
+<!-- <img src="../../../raeeskhan/Downloads/Video/what-is-encryption.svg" alt="Encryption Visual" width="1000" height="800"/> -->
 
 
 Welcome to my blog! In this post, we will explore the critical role that encryption plays in protecting sensitive data in an increasingly digital world. As cyber threats and data breaches continue to rise, understanding the principles and practices of encryption becomes essential for individuals and organizations alike.
@@ -32,7 +32,7 @@ Encryption can be categorized into two primary types: **symmetric encryption** a
 
 ### 1. Symmetric Encryption
 
-<img src="../../../raeeskhan/Downloads/Video/Symmetric-Encryption.png" alt="Encryption Visual" width="1000" height="800"/>
+<!-- <img src="../../../raeeskhan/Downloads/Video/Symmetric-Encryption.png" alt="Encryption Visual" width="1000" height="800"/> -->
 
 In symmetric encryption, the same key is used for both encryption and decryption processes. This method is typically faster and more efficient for large volumes of data but requires robust key management practices to prevent unauthorized access.
 
@@ -42,7 +42,7 @@ In symmetric encryption, the same key is used for both encryption and decryption
 
 ### 2. Asymmetric Encryption
 
-<img src="../../../raeeskhan/Downloads/Video/Asymmetric-Encryption.png" alt="Encryption Visual" width="1000" height="800"/>
+<!-- <img src="../../../raeeskhan/Downloads/Video/Asymmetric-Encryption.png" alt="Encryption Visual" width="1000" height="800"/> -->
 
 Asymmetric encryption employs a pair of keys: a public key for encryption and a private key for decryption. This approach enhances security, particularly for key exchange processes.
 
