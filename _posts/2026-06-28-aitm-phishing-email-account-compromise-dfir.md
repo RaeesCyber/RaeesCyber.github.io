@@ -260,7 +260,7 @@ Once the attacker has a valid session, they follow a predictable pattern:
 
 ---
 
-## Detection Engineering — Sigma Rule
+## Detection Engineering — Sigma Rules
 
 ```yaml
 title: AiTM Phishing - Session Cookie Replay Detected
