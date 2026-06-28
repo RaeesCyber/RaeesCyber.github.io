@@ -4,9 +4,9 @@ date: 2026-06-28 12:00:00 +0500
 categories: [DFIR, Incident Response]
 tags: [aitm, phishing, email-compromise, dfir, microsoft-365, threat-hunting, entra-id, bec, session-hijacking]
 description: A DFIR deep-dive into Adversary-in-the-Middle phishing targeting corporate email accounts — attack chain, artifact analysis, KQL hunting queries, and remediation playbook.
-image:
-  path: /assets/img/posts/aitm-phishing/cover.png
-  alt: AiTM Phishing DFIR Investigation
+# image:
+#   path: /assets/img/posts/aitm-phishing/cover.png
+#   alt: AiTM Phishing DFIR Investigation
 toc: true
 comments: true
 pin: false
