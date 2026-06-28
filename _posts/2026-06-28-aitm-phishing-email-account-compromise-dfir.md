@@ -35,7 +35,8 @@ Adversary-in-the-Middle (AiTM) phishing is a session hijacking technique that **
 
 Traditional phishing captures credentials. AiTM goes further — it intercepts the **live authentication session** by acting as a transparent reverse proxy between the victim and the legitimate Identity Provider (e.g., Microsoft Entra ID).
 
-![AiTM Attack Chain Diagram](/assets/img/posts/AitmPhishng/AitmPhishingCookiesTheft.png){: w="700" h="400"}
+<img src="/assets/img/posts/AitmPhishing/AitmPhishingCookiesTheft.png" alt="Encryption Visual" width="700" height="400"/>
+
 
 
 **Attack Chain Breakdown:**
@@ -59,7 +60,8 @@ Traditional phishing captures credentials. AiTM goes further — it intercepts t
 
 AiTM campaigns abuse trusted infrastructure to evade email security controls and gain victim trust.
 
-![Sample AiTM Phishing Email](/assets/img/posts/AitmPhishng/AitmPhishingEmail.png){: w="700" h="400"}
+<img src="/assets/img/posts/AitmPhishing/AitmPhishingEmail.png" alt="Encryption Visual" width="700" height="400"/>
+
 _
 
 **Common lure themes used in AiTM campaigns:**
@@ -107,7 +109,8 @@ GET https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=userPrincipalName
 | **Defender for Cloud Apps** | MDA / MCAS | Impossible travel, mass download alerts |
 | **Message Trace** | Exchange Admin Center | Phishing email delivery, originating IP |
 
-![Microsoft 365 Log Source Map](/assets/img/posts/AitmPhishng/mappingLogSoucese.png){: w="700" h="400"}
+<img src="/assets/img/posts/AitmPhishing/InvestegationPhases.png" alt="Encryption Visual" width="700" height="400"/>
+
 
 
 > Preserve raw logs **before** any containment action. Revoking sessions can modify token state and overwrite evidence in some log sources. Export first.
@@ -172,7 +175,8 @@ CloudAppEvents
 
 Build a chronological timeline correlating all log sources before concluding anything.
 
-![Attack Timeline Visualization](/assets/img/posts/AitmPhishng/AttackTimeLine.png){: w="700" h="400"}
+<img src="/assets/img/posts/AitmPhishing/AttackTimeLine.png" alt="Encryption Visual" width="700" height="400"/>
+
 
 
 **Key timestamps to correlate:**
@@ -194,7 +198,8 @@ Build a chronological timeline correlating all log sources before concluding any
 
 Once the attacker has a valid session, they follow a predictable pattern:
 
-![Post-Compromise Activity Kill Chain](/assets/img/posts/AitmPhishng/%20KillChainDiagram.png){: w="700" h="400"}
+<img src="/assets/img/posts/AitmPhishing/KillChainDiagram.png" alt="Encryption Visual" width="700" height="400"/>
+
 
 
 | Activity | What to Look For |
@@ -260,7 +265,7 @@ Once the attacker has a valid session, they follow a predictable pattern:
 
 ---
 
-## Detection Engineering — Sigma Rules
+## Detection Engineering — Sigma Rule
 
 ```yaml
 title: AiTM Phishing - Session Cookie Replay Detected
