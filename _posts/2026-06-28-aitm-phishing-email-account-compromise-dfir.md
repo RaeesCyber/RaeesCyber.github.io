@@ -4,9 +4,9 @@ date: 2026-06-28 12:00:00 +0500
 categories: [DFIR, Incident Response]
 tags: [aitm, phishing, email-compromise, dfir, microsoft-365, threat-hunting, entra-id, bec, session-hijacking]
 description: A DFIR deep-dive into Adversary-in-the-Middle phishing targeting corporate email accounts — attack chain, artifact analysis, KQL hunting queries, and remediation playbook.
-# image:
-#   path: /assets/img/posts/aitm-phishing/cover.png
-#   alt: AiTM Phishing DFIR Investigation
+image:
+  path: /assets/img/posts/AitmPhishing/AitmPhishingCookiesTheft.png
+  alt: AiTM Phishing DFIR Investigation
 toc: true
 comments: true
 pin: false
@@ -35,9 +35,8 @@ Adversary-in-the-Middle (AiTM) phishing is a session hijacking technique that **
 
 Traditional phishing captures credentials. AiTM goes further — it intercepts the **live authentication session** by acting as a transparent reverse proxy between the victim and the legitimate Identity Provider (e.g., Microsoft Entra ID).
 
-<img src="/assets/img/posts/AitmPhishing/AitmPhishingCookiesTheft.png" alt="Encryption Visual" width="700" height="400"/>
-
-
+![AiTM Attack Chain Diagram](/assets/img/posts/AitmPhishing/AitmPhishingCookiesTheft.png){: w="700" h="400"}
+_<!-- TODO: Insert a flow diagram showing the full chain: Victim → Phishing Link → AiTM Proxy (attacker-controlled) ↔ Legitimate Microsoft Login. Add a callout at the proxy layer showing "Session Cookie Captured Here." Tools: Excalidraw, draw.io, or Lucidchart. Export as PNG. -->_
 
 **Attack Chain Breakdown:**
 
@@ -60,9 +59,8 @@ Traditional phishing captures credentials. AiTM goes further — it intercepts t
 
 AiTM campaigns abuse trusted infrastructure to evade email security controls and gain victim trust.
 
-<img src="/assets/img/posts/AitmPhishing/AitmPhishingEmail.png" alt="Encryption Visual" width="700" height="400"/>
-
-_
+![Sample AiTM Phishing Email](/assets/img/posts/AitmPhishing/AitmPhishingEmail.png){: w="700" h="400"}
+_<!-- TODO: Insert a sanitized/redacted screenshot of a simulated AiTM phishing email. Highlight: sender domain (spoofed or lookalike), urgency language ("Your account will be suspended"), and the embedded redirect link. Blur any real victim UPN, org name, or tenant details. A Canary Token or test lure works well here. -->_
 
 **Common lure themes used in AiTM campaigns:**
 
@@ -109,9 +107,8 @@ GET https://graph.microsoft.com/v1.0/auditLogs/signIns?$filter=userPrincipalName
 | **Defender for Cloud Apps** | MDA / MCAS | Impossible travel, mass download alerts |
 | **Message Trace** | Exchange Admin Center | Phishing email delivery, originating IP |
 
-<img src="/assets/img/posts/AitmPhishing/InvestegationPhases.png" alt="Encryption Visual" width="700" height="400"/>
-
-
+![Microsoft 365 Log Source Map](/assets/img/posts/AitmPhishing/InvestegationPhases.png){: w="700" h="400"}
+_<!-- TODO: Insert a diagram mapping log sources to investigation phases. Show which log answers which question: e.g., "Who authenticated?" → Entra Sign-in Logs; "What did they read?" → Mailbox Audit; "What did they send?" → UAL + Message Trace. A simple table-to-flow diagram works well. -->_
 
 > Preserve raw logs **before** any containment action. Revoking sessions can modify token state and overwrite evidence in some log sources. Export first.
 {: .prompt-danger }
@@ -175,9 +172,8 @@ CloudAppEvents
 
 Build a chronological timeline correlating all log sources before concluding anything.
 
-<img src="/assets/img/posts/AitmPhishing/AttackTimeLine.png" alt="Encryption Visual" width="700" height="400"/>
-
-
+![Attack Timeline Visualization](/assets/img/posts/AitmPhishing/AttackTimeLine.png){: w="700" h="400"}
+_<!-- TODO: Insert a horizontal or vertical timeline graphic showing the attack sequence with timestamps. Example flow: [T+0:00] Phishing email delivered → [T+0:04] Victim clicks link → [T+0:07] Victim completes MFA on proxy → [T+0:08] Attacker replays cookie from different IP → [T+0:23] Inbox forwarding rule created → [T+1:15] BEC email sent to Finance. Build in Excel, Timeline Explorer, or Miro. -->_
 
 **Key timestamps to correlate:**
 
@@ -198,9 +194,8 @@ Build a chronological timeline correlating all log sources before concluding any
 
 Once the attacker has a valid session, they follow a predictable pattern:
 
-<img src="/assets/img/posts/AitmPhishing/KillChainDiagram.png" alt="Encryption Visual" width="700" height="400"/>
-
-
+![Post-Compromise Activity Kill Chain](/assets/img/posts/AitmPhishing/KillChainDiagram.png){: w="700" h="400"}
+_<!-- TODO: Insert an attack tree or kill-chain diagram showing attacker post-compromise actions. Nodes: Session Replay → Mailbox Recon → Inbox Rule Creation (forward/delete) → BEC Email to Finance/HR → Lateral Phishing to Victim's Contacts → Possible Data Exfil from OneDrive. Color-code by MITRE tactic (TA0009 Collection, TA0010 Exfiltration, TA0040 Impact). -->_
 
 | Activity | What to Look For |
 |---|---|
