@@ -1,0 +1,41 @@
+<!--
+  Footer override — Chirpy attribution removed
+-->
+<footer
+  aria-label="Site Info"
+  class="
+    d-flex flex-column justify-content-center text-muted
+    flex-lg-row justify-content-lg-between align-items-lg-center pb-lg-3
+  "
+>
+  <p>
+    {%- capture _year -%}
+      <time>{{ 'now' | date: '%Y' }}</time>
+    {%- endcapture -%}
+
+    ©
+    {%- if site.social.name -%}
+      {{ _year }}
+      {%- if site.social.links[0] -%}
+        <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+      {%- else -%}
+        {{ site.social.name }}.
+      {%- endif -%}
+    {%- else -%}
+      {{ _year }}
+    {%- endif -%}
+
+    {%- assign _lang = include.lang | default: site.lang | default: 'en' -%}
+    {%- if site.data.locales[_lang].copyright.license.template -%}
+      {%- capture _license_text -%}
+        {{ site.data.locales[_lang].copyright.license.template
+          | replace: ':LICENSE_NAME', site          | replace: ':LICENSE_NAME', site                    | replaCENSE_LINK', site.data.locales[_lang].copyright.license.link }}
+      {%- endcapture -%}
+      <span
+        data-bs-toggle="tooltip"
+        data-bs-placement="top"
+        title="{{ _license_text }}"
+      >{{ site.data.locales[_lang].copyright.brief }}</span>
+    {%- endif -%}
+  </p>
+</footer>
