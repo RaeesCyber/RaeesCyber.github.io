@@ -16,10 +16,10 @@ timezone:
 
 title: Raees Khan # the main title
 
-tagline: SOC Analyst → Threat Hunter | Detection Engineering | APT Intelligence # it will display as the subtitle
+tagline: Threat Hunter · Incident Responder · Detection Engineer # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  Raees Khan | SOC L1 Analyst at an MSSP defending 100+ enterprise environments. This blog covers threat hunting, DFIR investigation methodology, APT intelligence, detection engineering, and KQL/SPL hunting queries from real-world SOC operations.
+  Raees Khan — threat hunter, incident responder, and detection engineer operating across enterprise environments at scale. DFIR methodology, APT intelligence, detection engineering, and adversary TTP analysis from production operations.
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.
@@ -35,14 +35,12 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Raees Khan
-  email: rae3skhan@gmail.com # change to your email address
+  email: raeeskhan.cyber@proton.me
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/EngrRaeesKhan # change to your Twitter homepage
-    - https://github.com/rae3skhan # change to your GitHub homepage
-    # Uncomment below to add more social links
-    # - https://www.facebook.com/username
+    - https://github.com/Rae3skhan
     - https://www.linkedin.com/in/raeeskhan-cyber
+    - https://twitter.com/EngrRaeesKhan
 
 # Site Verification Settings
 webmaster_verifications:
