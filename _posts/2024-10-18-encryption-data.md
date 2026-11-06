@@ -72,7 +72,7 @@ While encryption serves as a powerful tool for data security, it is not without 
 
 1. **Key Management**: Effective key management is crucial. Losing or compromising an encryption key can render encrypted data inaccessible or exposed.
 
-2. **Performance Impact**: The process of encryption can introduce latency, especially in systems that require real-time data access, necessitating a balance between security and performance.
+2. **Performance Impact**: The process of encryption can introduce latency, especially in systems that require real time data access, necessitating a balance between security and performance.
 
 3. **Legal and Regulatory Considerations**: Various jurisdictions impose laws that affect the use of encryption technologies, including export restrictions and mandates for law enforcement access to encrypted data.
 
